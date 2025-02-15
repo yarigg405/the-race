@@ -32,6 +32,9 @@ namespace TheRaceGame.Game
         private Rigidbody _rb;
         private Vector3 _suspensionForce;
         private float _wheelAngle;
+        private Vector3 _wheelVelocityLS;
+        private float _fX;
+        private float _fY;
 
         public float SteerAngle { get; set; }
 
@@ -62,7 +65,11 @@ namespace TheRaceGame.Game
 
                 _suspensionForce = (_springForce + _damperForce) * transform.up;
 
-                _rb.AddForceAtPosition(_suspensionForce, hit.point);
+                _wheelVelocityLS = transform.InverseTransformDirection(_rb.GetPointVelocity(hit.point));
+                _fX = Input.GetAxis("Vertical") * _springForce;
+                _fY = _wheelVelocityLS.x * _springForce;
+
+                _rb.AddForceAtPosition(_suspensionForce + (_fX * transform.forward) + (_fY * -transform.right), hit.point);
             }
         }
 
