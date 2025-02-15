@@ -163,11 +163,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 835e86635b7ad7f4bab0005cb50ea36c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FrontLeft: 0
+  FrontRight: 0
+  RearLeft: 1
+  RearRight: 0
   _restLenght: 0.5
   _springTravel: 0.2
   _springStiffness: 30000
   _damperStiffness: 4000
   _wheelRadius: 0.33
+  _steerTime: 0
 --- !u!1001 &35314596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -252,6 +257,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 64232813930103416, guid: 4f9a1168ab73c884bb900de3b6909c10, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 9e5587a48e430ea49942e8d85678c1f6, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1070,11 +1079,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 835e86635b7ad7f4bab0005cb50ea36c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FrontLeft: 0
+  FrontRight: 0
+  RearLeft: 0
+  RearRight: 1
   _restLenght: 0.5
   _springTravel: 0.2
   _springStiffness: 30000
   _damperStiffness: 4000
   _wheelRadius: 0.33
+  _steerTime: 0
 --- !u!1 &1309086990
 GameObject:
   m_ObjectHideFlags: 0
@@ -1152,6 +1166,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1717638801}
   - component: {fileID: 1717638802}
+  - component: {fileID: 1717638803}
   m_Layer: 0
   m_Name: Car
   m_TagString: Untagged
@@ -1206,6 +1221,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1717638803
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1717638800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46149aa62990e6940aa196c26be54991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wheels:
+  - {fileID: 1789476534}
+  - {fileID: 2094604335}
+  - {fileID: 2082309}
+  - {fileID: 1042429562}
+  _wheelBase: 2.55
+  _rearTrack: 1.525
+  _turnRadius: 10.8
+  _steerInput: 0
 --- !u!1 &1789476532
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,11 +1286,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 835e86635b7ad7f4bab0005cb50ea36c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FrontLeft: 1
+  FrontRight: 0
+  RearLeft: 0
+  RearRight: 0
   _restLenght: 0.5
   _springTravel: 0.2
   _springStiffness: 30000
   _damperStiffness: 4000
   _wheelRadius: 0.33
+  _steerTime: 8
 --- !u!1 &2094604333
 GameObject:
   m_ObjectHideFlags: 0
@@ -1299,11 +1340,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 835e86635b7ad7f4bab0005cb50ea36c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  FrontLeft: 0
+  FrontRight: 1
+  RearLeft: 0
+  RearRight: 0
   _restLenght: 0.5
   _springTravel: 0.2
   _springStiffness: 30000
   _damperStiffness: 4000
   _wheelRadius: 0.33
+  _steerTime: 8
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
